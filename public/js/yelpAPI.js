@@ -25,7 +25,7 @@ var venueName = $("<h5>").text("Attractions around - "+venue).addClass("venueCla
     "&size="+
     40;
 
-    console.log(city);
+  console.log(city);
   $.ajax({
     url: queryURL,
     headers: {
@@ -51,6 +51,9 @@ var venueName = $("<h5>").text("Attractions around - "+venue).addClass("venueCla
     var businessAddress = results[i].location.address1;
     console.log(businessAddress);
   var businessPhone = results[i].phone;
+  var businessCata = results[i].categories;
+  console.log("This is the catagory of the business: !!!"+JSON.stringify(businessCata));
+
   var businessPrice = results[i].price;
   var businessRating = results[i].rating;
   var businessImage = results[i].image_url;
