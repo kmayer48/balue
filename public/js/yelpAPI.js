@@ -1,18 +1,24 @@
 
-var city= "Washington DC";//$(this).attr("data-city");
-var venue= $(this).attr("data-venue");
+
+
+// var mapCenter = businessCoordinates;
+var city = "Washington DC" //$(this).attr("data-city");
+var venue = $(this).attr("data-venue");
+var businessCoordinates;
+var blatitude;
+var blongitude;
 var cityName = $("<h5>").text("City of - "+city).addClass("cityClass").addClass("yelpClass");
 var venueName = $("<h5>").text("Attractions around - "+venue).addClass("venueClass").addClass("yelpClass");
 
+
+
   var categories = "wine_bar";
-  var category = "American";
-  var term = "bars,restaurants";
-  //var location = "350 5th Ave New York 10118";
+  var catergory = "American";
+  var term = "bars, restaurants";
   var key =
     "CCqam6P48aTcR7ZlcouEZvO9ibZrlVcnY73Fkx2eCoEZbyKweGuzQW2RNP5OxHR9Xhdpbi2CAYybGFxuPk1RGniw4fGpRrktdGE-MXJzWI5voJRoMH7L-KriU5sVXHYx";
   queryURL =
     "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" +
-     //"https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/categories/restaurants" +
     term +
     "&location=" +
     city +
@@ -33,13 +39,12 @@ var venueName = $("<h5>").text("Attractions around - "+venue).addClass("venueCla
 
   function getRestaurants(response){
     console.log(response);
-
     var results = response.businesses;
 
     $("tbody").empty();
     $("tbody").append(cityName, venueName);
 
-    for (var i = 1; i < results.length; i++){
+    for (var i = 0 ; i < results.length; i++){
     //location information
   var businessName = results[i].name;
   console.log(businessName);
@@ -52,7 +57,13 @@ var venueName = $("<h5>").text("Attractions around - "+venue).addClass("venueCla
   var businessPrice = results[i].price;
   var businessRating = results[i].rating;
   var businessImage = results[i].image_url;
-
+  blatitude = (results[0].coordinates.latitude);
+  console.log(blatitude)
+  blongitude = (results[0].coordinates.longitude);
+  console.log(typeof blongitude)
+  businessCoordinates = (blatitude + "," + blongitude);
+  console.log("looking for the coordinates:" + businessCoordinates + "!!!!!!!!!!");
+  
 //   // Append the new row to the table
 //   $("#event-table > tbody").append(newRow);
 
@@ -62,7 +73,6 @@ var newDiv2 = $("<div></div>").addClass("restaurantImage").addClass("col-md-5");
 // var img = $("<img />",{
 //    src: "businessImage",
 
-
 newDiv1.append(
   // $("<img />",{src: "businessImage",
   $("<p></p>").text(businessName).addClass("businessName"),
@@ -71,20 +81,55 @@ newDiv1.append(
   $("<p></p>").text("Price: "+businessPrice).addClass("yelpPopulate"),
   $("<p></p>").text("Stars: "+businessRating).addClass("yelpPopulate"),
 );
-
 newDiv2.append(
   $("<img></img>").attr("src",businessImage).addClass("restaurantImage"),
-
 );
-
 
 $(newDivrow).append(newDiv1);
 $(newDivrow).append(newDiv2);
 $("body").append(newDivrow);
-
 }
- 
-  }
+};
+
+console.log("looking for the coordinates" + businessCoordinates + "!!!!!!");
+
+
+
+function initMap(){
+  //Map options
+  var options = {
+      zoom:15,
+      center: {lat: 39.9072, lng:-77.0369}
+  };
+  console.log("looking for this" + options +"!!!!");
+  //new map
+  var map = new google.maps.Map(document.getElementById('map'), options);
+
+  var marker = new google.maps.Marker({
+      position: {lat: 39.9072, lng:-77.0369},
+      map:map,
+      icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+      
+  });
+  console.log("testing marker: " + marker + "!!")
+
+  var infoWindow = new google.maps.InfoWindow({
+      content: "<h1>Georgetown, DC</h1>"
+  });
+
+  marker.addListener("click",function(){
+      infoWindow.open(map,marker);
+;
+  });
+  
+}; 
+
+var script = document.createElement('script')
+script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDnzLCmLBrsaRrXUCgiEqaO3HAKf-7zXow&callback=initMap'
+script.defer = true
+script.async = true
+var head = document.querySelector('head')
+head.appendChild(script);
 
 
 
