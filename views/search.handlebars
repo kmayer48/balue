@@ -1,0 +1,125 @@
+<div class="navbar-fixed">
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="/index.html" class="brand-logo"><img src="./img/Balue.png" alt="logo"
+          width="120px"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/search.html">Search</a></li>
+        <li><a href="/submit.html">Submit a Deal</a></li>
+      </ul>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</div>
+
+<div class="parallax-container valign-wrapper">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row center">
+        <h4 class="header col s12 light">Taking Happy Hour to new Heights <i class="fas fa-feather-alt"></i></h4>
+      </div>
+    </div>
+  </div>
+  <div class="parallax"><img src="img/drinks.jpeg" alt="Unsplashed background img 2" width="auto"></div>
+</div>
+
+<div class="container" id="results-container">
+  <div class="row">
+    <div class="col s12 center">
+      <h4>Happy Hour Deals In Your Area</h4>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div id="cards" class="col s9">
+      <div class="card white">
+        <div class="card-content black-text">
+          <span class="card-title">{{  }}</span>
+          <p>{{  }}</p>
+        </div>
+        <div class="card-action amber">
+          <a class="white-text" href="#">This is a link</a>
+          <a class="white-text" href="#">This is a link</a>
+        </div>
+      </div>
+      <div class="card orange darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{  }}</span>
+          <p>{{  }}</p>
+        </div>
+        <div class="card-action amber">
+          <a class="white-text" href="#">This is a link</a>
+          <a class="white-text" href="#">This is a link</a>
+        </div>
+      </div>
+      <div class="card orange darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{ }}</span>
+          <p>{{ }}</p>
+        </div>
+        <div class="card-action amber">
+          <a class="white-text" href="#">This is a link</a>
+          <a class="white-text" href="#">This is a link</a>
+        </div>
+      </div>
+      <div class="card orange darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{ }}</span>
+          <p>{{  }}</p>
+        </div>
+        <div class="card-action amber">
+          <a class="white-text" href="#">This is a link</a>
+          <a class="white-text" href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="map-position">
+      <div class="section col s12" id="map"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="page-footer amber">
+  <div class="container">
+    <div class="row">
+      <div class="col m6 s12 center-align">
+        <ul id="bottomNav">
+          <li><a class="white-text" href="/index.html">Home</a></li>
+          <li><a class="white-text" href="/search.html">Search</a></li>
+          <li><a class="white-text" href="/submit.html">Submit a Deal</a></li>
+        </ul>
+      </div>
+      <div class="col m6 s12 center-align">
+        <h5 class="white-text">Meet our Team</h5>
+        <ul id="team">
+          <li><a class="tooltipped" data-position="top" data-tooltip="Monique Morales" href="#!"><img
+                class="team circle responsive-img" src="img/monique.jpg"></a>
+          <li><a class="tooltipped" data-position="top" data-tooltip="Carlos Mendez" href="#!"><img
+                class="team circle responsive-img" src="img/carlos.png"></a>
+          <li><a class="tooltipped" data-position="top" data-tooltip="Devan Gilliard" href="#!"><img
+                class="team circle responsive-img" src="img/devan.jpeg"></a>
+          <li><a class="tooltipped" data-position="top" data-tooltip="Kenny Mayer" href="#!"><img
+                class="team circle responsive-img" src="img/kenny.jpeg"></a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/init.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnzLCmLBrsaRrXUCgiEqaO3HAKf-7zXow&callback=initMap"></script>
