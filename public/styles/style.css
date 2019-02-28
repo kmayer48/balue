@@ -1,0 +1,107 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+;
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+nav ul a {
+  color: black;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.parallax-container {
+  color: white;
+  background-color: rgba(105, 105, 105, 0.6);
+  background-blend-mode: color;
+  min-height: 380px;
+  height: auto;
+  line-height: 0;
+}
+
+.circle {
+  width: 70px;
+}
+
+.team {
+  border: 2px white solid;
+}
+
+#team li {
+  display: inline;
+}
+
+#bottomNav {
+  margin-top: 30px;
+  line-height: 25px;
+}
+
+.modal-content {
+  color: black
+}
+
+#logo-container {
+  z-index: 1;
+}
+
+#map_container{
+  position: relative;
+}
+#map{
+  Height: 700px; 
+  width: 700px; 
+  position: fixed;
+  Top: 200px;
+  Left: 0;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
