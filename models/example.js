@@ -22,7 +22,6 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
       },
     },
-
     hours: {
       type: DataTypes.TEXT,
       allowNull: false,
