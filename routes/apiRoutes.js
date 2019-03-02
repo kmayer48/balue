@@ -22,6 +22,7 @@ module.exports = function(app) {
     }).then(function(dbDeals) {
       res.json(dbDeals);
     });
+    
   });
 
   // Delete an example by id
