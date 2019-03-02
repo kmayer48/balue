@@ -22,8 +22,11 @@ CREATE TABLE contacts(
     contact_company VARCHAR(30) NOT NULL,
     PRIMARY KEY(contact_id)
 );
+
+INSERT INTO deals(Manager_name, Restaurant_name, Phone_number, food_deal, drink_deal,hours, createdAt, updatedAt)
+value ("Monique Morales", "GW Coding", "5716066253","half off all appetizers", "$5 cocktails", "7pm-9pm", NOW(), NOW());
     
 USE restaurant_db;
 
 SELECT * FROM deals
-    
+    ,
