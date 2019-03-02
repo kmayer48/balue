@@ -1,19 +1,50 @@
 module.exports = function(sequelize, DataTypes) {
-  var owner = sequelize.define("post", {
-    businessName: {
+  var ownerPost = sequelize.define("post", {
+    manager_name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
       len: [1]
     },
-    deal: {
+
+    phone_number: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+      len: [10]
+      }
+    },
+
+    restaurant_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+      len: [1]
+      },
+    },
+    hours: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
       len: [1]
       },
     },
-    description: DataTypes.TEXT
+
+    drink_deal: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+      len: [1]
+      },
+    },
+
+    food_deal: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+      len: [1]
+      },
+    }
   }
   });
 
@@ -21,5 +52,10 @@ module.exports = function(sequelize, DataTypes) {
     text: DataTypes.STRING,
     description: DataTypes.TEXT
   });
-  return Example;
+
+  var obj = {
+    ownerPost:  ownerPost
+  };
+
+  return obj;
 };
