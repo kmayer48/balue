@@ -2,23 +2,32 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  app.get("/api/deals", function(req, res) {
+    db.deals.findAll({}).then(function(dbDeals) {
+      res.json(dbDeals);
     });
   });
-
+     
   // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  app.post("/api/deals", function(req, res) {
+    db.deals.create({
+      
+      manager_name: req.body.name,
+      phone_number: req.body.phone,
+      restaurant_name: req.body.company,
+      hours: req.body.dealHours,
+      drink_deal: req.body.drinks,
+      food_deal: req.body.food,
+      
+    }).then(function(dbDeals) {
+      res.json(dbDeals);
     });
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
+  /*app.delete("/api/examples/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
       res.json(dbExample);
     });
-  });
+  });*/
 };
