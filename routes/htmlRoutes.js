@@ -1,6 +1,21 @@
 var db = require("../models");
+var path = require("path");
 
 module.exports = function(app) {
+  
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+  });
+  
+  app.get("/search", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/search.html"));
+  });
+
+  app.get("/submit", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/submit.html"));
+  });
+
+  /////////////////////////////////////////////////
   // Load index page
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
