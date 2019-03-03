@@ -8,7 +8,7 @@
       </div>
     </div>
   </div>
-  <div class="parallax"><img src="..img/drinks.jpeg" alt="Unsplashed background img 2" width="auto"></div>
+  <div class="parallax"><img src="/img/drinks.jpeg" alt="Unsplashed background img 2" width="auto"></div>
 </div>
 
 <div class="container" id="results-container">
@@ -19,10 +19,10 @@
     </div>
   </div>
   <div class="row">
-    <div id="cards" class="col s9">
+    <div id="cards" class="col s6">
       <div class="card orange darken-1">
-        {{#each results}}
-        <div class="card-content white-text">  
+        <div class="card-content white-text">
+          {{#each results}}
           <span class="card-title">{{this.id}}</span>
           <p>{{this.Restaurant_name}}<br>
             {{this.food_deal}}<br>
@@ -30,18 +30,22 @@
             {{thi.Manager_name}}<br>
             {{this.phone_number}}<br></p>
           {{/each}}
-        </div>
+          </div>
+            <div class="card-action amber">
+              <a class="white-text" href="#">This is a link</a>
+              <a class="white-text" href="#">This is a link</a>
+          </div>
     </div>
   </div>
 </div>
 
-<div class="container">
+{{!-- <div class="container">
   <div class="row">
     <div class="map-position">
-      <div class="section col s12" id="map"></div>
+      <div class="section col s6" id="map"></div>
     </div>
   </div>
-</div>
+</div> --}}
 
 
 
