@@ -12,9 +12,9 @@ module.exports = function(app) {
   app.post("/api/deals", function(req, res) {
     db.deals.create({
       
-      manager_name: req.body.name,
-      phone_number: req.body.phone,
-      restaurant_name: req.body.company,
+      Manager_name: req.body.name,
+      Phone_number: req.body.phone,
+      Restaurant_name: req.body.company,
       hours: req.body.dealHours,
       drink_deal: req.body.drinks,
       food_deal: req.body.food,
