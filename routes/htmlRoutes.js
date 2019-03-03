@@ -6,23 +6,27 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/index.html"));
   });
+
+  app.get("/views/index.html", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+  });
   
-  app.get("/search", function(req, res) {
+  app.get("/views/search.html", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/search.html"));
   });
 
-  app.get("/submit", function(req, res) {
+  app.get("/views/submit.html", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/submit.html"));
   });
 
+  app.get("/views/submit.html", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/submit.html"));
+  });
   /////////////////////////////////////////////////
   // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+  app.get("/views/search.html", function(req, res) {
+    db.deals.findAll({}).then(function(dbDeals) {
+      res.render("/views/search.html", dbDeals);
     });
   });
 
