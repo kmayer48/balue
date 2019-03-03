@@ -1,3 +1,7 @@
+var Sequelize = require("sequelize");
+
+var sequelize = require("../config/connection.js");
+
 module.exports = function(sequelize, DataTypes) {
     var deals = sequelize.define("deals", {
       Manager_name: {
