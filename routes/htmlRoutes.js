@@ -10,28 +10,23 @@ module.exports = function(app) {
       condition: false
     });
   });
-
-  app.get("/views/index.html", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
-  });
   
   app.get("/search", function (req, res) {
-    res.render("search", { 
-      title: "Balue finds"
+    db.deals.findAll({}).then(function(dbDeals) {
+    res.render("search");   
     });
+  });
     
-      // db.deals.findAll().then(function (deals) {
-      //   res.render("search", {
-      //     results: results
-      //   });
-      //   console.log(results);
-      //   console.log(deals);
-      // });
+  app.get("/submit", function(req, res) {
+    res.render("submit", { 
+    title: "Submit your deal!"});
   });
 
-  app.get("/submit", function(req, res) {
-    res.render("submit", { title: "Submit your deal!"});
+  // Render 404 page for any unmatched routes
+  app.get("*", function(req, res) {
+    res.render("404");
   });
+};
 
 
   // app.get("/", function(req, res) {
@@ -49,18 +44,11 @@ module.exports = function(app) {
     // });
   // });
 
-  /////////////////////////////////////////////////
-  // Load index page
-  app.get("/views/search.html", function(req, res) {
-    db.deals.findAll({}).then(function(dbDeals) {
-      res.render("/views/search.html", dbDeals);
-    });
-  });
-
-
-
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
-};
+    //     // db.deals.findAll().then(function (deals) {
+    //   //   res.render("search", {
+    //   //     results: results
+    //   //   });
+    //   //   console.log(results);
+    //   //   console.log(deals);
+    //   // });
+    // });
