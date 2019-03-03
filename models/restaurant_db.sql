@@ -28,5 +28,4 @@ value ("Monique Morales", "GW Coding", "5716066253","half off all appetizers", "
     
 USE restaurant_db;
 
-SELECT * FROM deals
-    ,
+SELECT * FROM deals;
