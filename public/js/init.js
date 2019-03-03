@@ -39,14 +39,27 @@ $("#zip-submit").on("click", function(event) {
   var zip = $("#zip").val().trim();
   $("#zip").val('');
   console.log(zip);
-});
+
+  $.get("/api/deals", function(data) {
+    console.log(data);
+  }
+  )}
+);
 
 $("#zip-resubmit").on("click", function(event) {
   // Make sure to preventDefault on a submit event.
   event.preventDefault();
-  var zip = $("#zip").val().trim();
+  var zip = $("#zip").val();
   $("#zip").val('');
   console.log(zip);
+
+  $.ajax("/api/deals", {
+  type: "GET",
+  }).then(function () {
+  console.log("Added new burger");
+  // Reload the page to get the updated burger list.
+  location.reload();
+  });
 });
 
 $("#submit").on("click", function(event) {
