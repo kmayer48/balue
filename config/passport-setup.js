@@ -11,7 +11,22 @@ passport.use(
 }, (accessToken, refreshToken, profile, done) => {
     // passport callback function
     console.log('Passport callback function fired!')
-    console.log(profile)
+    console.log(profile);
+    var displayName = profile.displayName;
+    var passport_id = profile.id;
+
+    console.log("This is the Display name "+displayName);
+    console.log("This is the id "+passport_id);
+
+    // Submits a new post and brings user to blog page upon completion
+    //submitPost(displayName);
+
+    //function submitPost(Post) {
+    //$.post("/api/contacts", Post, function() {
+      //window.location.href = "/index";
+    //});
+  //}
+
 })
 )
 
