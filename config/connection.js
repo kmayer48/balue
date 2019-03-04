@@ -13,8 +13,8 @@ if (process.env.JAWSDB_URL) {
         port: 3306,
         host: "localhost",   
         user: "root",
-        password: "",
-        database: "dealsdb"
+        password: "22284322Dtg!",
+        database: "restaurant_db"
     })
 };
 
