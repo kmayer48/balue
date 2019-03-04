@@ -10,14 +10,16 @@ module.exports = function(app) {
      
   // Create a new example
   app.post("/api/deals", function(req, res) {
+  
+    var deal = req.body;
+
     db.deals.create({
-      
-      Manager_name: req.body.name,
-      Phone_number: req.body.phone,
-      Restaurant_name: req.body.company,
-      hours: req.body.dealHours,
-      drink_deal: req.body.drinks,
-      food_deal: req.body.food,
+      Manager_name: deal.name,
+      Phone_number: deal.phone,
+      Restaurant_name: deal.company,
+      hours: deal.dealHours,
+      drink_deal: deal.drinks,
+      food_deal: deal.food,
       
     }).then(function(dbDeals) {
       res.json(dbDeals);
