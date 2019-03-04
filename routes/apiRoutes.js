@@ -34,8 +34,8 @@ module.exports = function(app) {
   // Create a post for the contacts
   app.post("/api/contacts", function(req, res) {
     db.contacts.create({
-      Manager_name: req.body.name,
-      Phone_number: req.body.phone,
+      Passport_displayName: req.body.displayName,
+      Passport_id: req.body.passportId,
     }).then(function(dbcontacts) {
       res.json(dbcontacts);
     });

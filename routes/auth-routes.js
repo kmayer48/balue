@@ -14,7 +14,16 @@ router.get('/google',passport.authenticate('google', {
 
 //callback route for google to redirect to
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-    res.send('Sending you back to Balue..')
+    res.send('/index'); //res.render("index");/
 });
 
+router.get('/google/redirect', isAuthenticated, function(req, res, next) {
+     //res.redirect('/index');
+})
+
+function isAuthenticated(req, res, next) {
+    if (req.isAuthenticated())
+      return next();
+    res.redirect('/index');
+  }
 module.exports = router;
