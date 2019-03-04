@@ -27,19 +27,20 @@ module.exports = function(app) {
     
   });
 
+  app.get("/api/contacts", function(req, res) {
+    db.deals.findAll({}).then(function(dbcontacts) {
+      res.json(dbcontacts);
+    });
+  });
+
   // Create a post for the contacts
   app.post("/api/contacts", function(req, res) {
     db.contacts.create({
       
-      Manager_name: deal.name,
-      Phone_number: deal.phone,
-      Restaurant_name: deal.company,
-      hours: deal.dealHours,
-      drink_deal: deal.drinks,
-      food_deal: deal.food,
-      
-    }).then(function(dbDeals) {
-      res.json(dbDeals);
+      Manager_name: req.body.name,
+      Phone_number: req.body.phone,
+    }).then(function(dbcontacts) {
+      res.json(dbcontacts);
     });
     
   });
