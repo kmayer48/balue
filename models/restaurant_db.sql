@@ -15,17 +15,21 @@ CREATE TABLE deals(
     PRIMARY KEY(id)
     -- FOREIGN KEY (contact_id) REFERENCES contact_db (contact_id)
 );
+
     
 CREATE TABLE contacts(
-	contact_id INT(99) NOT NULL AUTO_INCREMENT,
-    contact_name VARCHAR(30) NOT NULL,
-    contact_company VARCHAR(30) NOT NULL,
-    PRIMARY KEY(contact_id)
+	id INT(99) NOT NULL AUTO_INCREMENT,
+	Passport_id INT(99) NOT NULL,
+    Passport_displayName VARCHAR(99) NOT NULL,
+    PRIMARY KEY (id)
 );
 
-INSERT INTO deals(Manager_name, Restaurant_name, Phone_number, food_deal, drink_deal,hours)
-value ("Monique Morales", "GW Coding", "5716066253","half off all appetizers", "$5 cocktails", "7pm-9pm");
+INSERT INTO deals(Manager_name, Restaurant_name, Phone_number, food_deal, drink_deal,hours, createdAt, updatedAt)
+value ("Monique Morales", "GW Coding", "5716066253","half off all appetizers", "$5 cocktails", "7pm-9pm", NOW(), NOW());
     
 USE restaurant_db;
 
-SELECT * FROM deals
+
+SELECT * FROM deals;
+
+SELECT * FROM contacts
