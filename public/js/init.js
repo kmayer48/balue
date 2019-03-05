@@ -61,16 +61,12 @@ $("#zip-submit").on("click", function (event) {
     var phone = data.Phone_number;
     console.log(phone)
 
+    $("#title").prepend(restaurantName);
+    $("#hours").html(hours);
+    $("#drinks").html(drinks);
+    $("#food").html(food);
+    $("#phone").html(phone);
   });  
-  // var card = $("<div class='card orange-darken-1>");
-  // var cardClass = $("<div class='card-content white-text'>");
-  // var cardHeader = $("<span class='card-title'>").html(restaurantName)
-  // var cardContent = $("<p></p>")
-
-  // $("#cards").append(card);
-  // $("#cards").append(cardClass);
-  // $("#cards").append(cardHeader);
-  // cardContent.append(hours, drinks, food, phone);
 });
 
 $("#zip-resubmit").on("click", function (event) {
@@ -83,29 +79,24 @@ $("#zip-resubmit").on("click", function (event) {
   $.get("/api/deals")
   .then(function(data) {
     console.log("Retrieved deals!");
-    console.log(JSON.stringify(data))
-    console.log(data)
-    var restaurantName = data[0].Restaurant_name
-    console.log(restaurantName)
-    var hours = data[0].hours;
-    console.log(hours)
-    var drinks = data[0].drink_deal;
-    console.log(drinks)
-    var food = data[0].food_deal;
-    console.log(food)
-    var phone = data[0].Phone_number;
-    console.log(phone)
+    console.log(JSON.stringify(data));
+    console.log(data);
+    var restaurantName = data[4].Restaurant_name;
+    console.log(restaurantName);
+    var hours = data[4].hours;
+    console.log(hours);
+    var drinks = data[4].drink_deal;
+    console.log(drinks);
+    var food = data[4].food_deal;
+    console.log(food);
+    var phone = data[4].Phone_number;
+    console.log(phone);
 
-  var card = $("<div class='card orange-darken-1>");
-  var cardClass = $("<div class='card-content white-text'>");
-  var cardHeader = $("<span class='card-title'>").html(restaurantName + hours + drinks + food + phone)
-  var cardContent = $("<p>").text(drinks)
-  var cardContent =+ $("<p>").text(food)
-
-  $("#cards").append(card);
-  $("#cards").append(cardClass);
-  $("#cards").append(cardHeader);
-  $("#cards").append(cardContent);
+    $("#title").html(restaurantName);
+    $("#hours").html("Hours: " + hours);
+    $("#drinks").html("Drinks: " + drinks)
+    $("#food").html("Food: " + food);
+    $("#phone").html("Phone: " + phone);
   });
 });
 

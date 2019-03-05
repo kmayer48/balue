@@ -62,12 +62,9 @@ p {
 #map_container{
   position: relative;
 }
-#map{
-  Height: 700px; 
-  width: 700px; 
-  position: fixed;
-  Top: 200px;
-  Left: 0;
+
+#map {
+  margin-top: 5%;
 }
 
 .sidenav-trigger {

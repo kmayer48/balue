@@ -22,23 +22,51 @@
     </div>
   </div>
 
-  <div class="container" id="results-container">
-    <div class="row">
-      <div class="col s12 center">
-        <h4>Happy Hour Deals In Your Area</h4>
-        <br>
+  <div id="result_cards" class="row">
+    <div id="cards" class="col s4">
+      <div class="card orange darken-1">
+        <div class="card-content white-text">
+          <span id="title" class="card-title center-align"></span>
+          <p id="hours"></p>
+          <p id="drinks"></p>
+          <p id="food"></p>
+          <p id="phone"></p>
+        </div>
+        <div class="card-action amber center-align">
+          <a class="white-text" href="#">Check out this bar on Yelp!</a>
+        </div>
+      </div>
+      <div class="card orange darken-1">
+        <div class="card-content white-text">
+          <span class="card-title center-align">Rocket Bar</span>
+          <p>Hours: 4-7pm</p>
+          <p>Drink Specials: 5$ Red/White Wine Glasses</p>
+          <p>Food Specials: 1/2 Off all Entres</p>
+          <p>Phone: 202-504-2495</p>
+        </div>
+        <div class="card-action amber center-align">
+          <a class="white-text" href="#">Check out this bar on Yelp!</a>
+        </div>
+      </div>
+      <div class="card orange darken-1">
+        <div class="card-content white-text">
+          <span class="card-title center-align">Johnny Pistolas</span>
+          <p>Hours: All Night</p>
+          <p>Drink Specials: 2$ Coronas</p>
+          <p>Food Specials: 3$ Tacos</p>
+          <p>Phone: 202-904-3950</p>
+        </div>
+        <div class="card-action amber center-align">
+          <a class="white-text" href="#">Check out this bar on Yelp!</a>
+        </div>
       </div>
     </div>
-    <div id="results" class="row">
-      <div id="cards" class="col s6">
+          <div class="col s8">
+             <div class="valign-wrapper">
+            <div id="map_container">
+              <img id ="map" src="/img/map.png" alt="map" width="700px">
+          </div>
       </div>
-    </div>
-  </div>
-
-  {{!-- <div class="container">
-    <div class="row">
-      <div class="map-position">
-        <div class="section col s6" id="map"></div>
       </div>
-    </div>
-  </div> --}}
+  </div>  
+</div>
